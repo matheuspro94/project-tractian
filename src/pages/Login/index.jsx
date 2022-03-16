@@ -1,9 +1,21 @@
 import './styles.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import validateEmail from '../../validate/validatelogin';
+
 function Login() {
   const [email, setEmail] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [buttonDisable, setButtonDisable] = useState(true);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (validateEmail(email)) {
+      setButtonDisable(false)
+    }
+  }, [email])
 
   async function attemptLogin() {
     try {
@@ -11,7 +23,8 @@ function Login() {
         email: email,
       })
       localStorage.setItem('user', JSON.stringify(data))
-      setLoading(false)
+      setLoading(true)
+      navigate('/not-found')
     } catch (error) {
       console(error)
     }
@@ -26,13 +39,13 @@ function Login() {
         <form className="content-right col-6 align-items-stretch">
           <h1>LOGIN</h1>
           <p>Insira seu e-mail</p>
-          <div class="input-group has-validation content-input">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <div className="input-group has-validation content-input">
+            <span className="input-group-text" id="inputGroupPrepend">@</span>
             <input 
               type="email"
               placeholder='E-mail'
               onChange={({ target }) => setEmail(target.value)}
-              class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+              className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
               required
             />
               <div class="invalid-feedback">
@@ -44,9 +57,10 @@ function Login() {
               className="content-btn btn btn-primary col-12"
               type='button'
               onClick={ attemptLogin }
+              disabled={ buttonDisable }
             >Acessar</button>
           </div>
-          {loading ? <p>Loading</p> : null}
+          {loading && <p>Loading....</p>}
         </form>
       </div>
     </div>
