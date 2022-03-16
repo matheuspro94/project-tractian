@@ -24,7 +24,7 @@ function Login() {
       })
       localStorage.setItem('user', JSON.stringify(data))
       setLoading(true)
-      navigate('/not-found')
+      navigate('/active')
     } catch (error) {
       console(error)
     }
