@@ -6,7 +6,6 @@ function StatusActive() {
   return (
     <>
       <Navbar />
-      <h1>pagina status active</h1>
       <StatusCard />
     </>
   );
