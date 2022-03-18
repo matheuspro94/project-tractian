@@ -38,12 +38,10 @@ function Login() {
         </div>
         <form className="content-right col-6 align-items-stretch">
           <h1>LOGIN</h1>
-          <p>Insira seu e-mail</p>
           <div className="input-group has-validation content-input">
-            <span className="input-group-text" id="inputGroupPrepend">@</span>
             <input 
               type="email"
-              placeholder='E-mail'
+              placeholder='Insira seu e-mail'
               onChange={({ target }) => setEmail(target.value)}
               className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
               required

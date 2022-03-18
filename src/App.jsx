@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import './App.css'
 import NotFound from './pages/NotFound';
 import Active from './pages/Active';
+import StatusActive from './pages/StatusActive';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/not-found" element={ <NotFound /> } />
         <Route exact path="/login" element={ <Login /> } />
         <Route exact path="/active" element={ <Active /> } />
+        <Route exact path="/status-active/:id" element={ <StatusActive /> } />
       </Routes>
     </div>
   );

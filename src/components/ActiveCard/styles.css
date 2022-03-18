@@ -1,0 +1,12 @@
+.container.container-active {
+  height: 100px;
+}
+
+.img-active {
+  height: 150px;
+}
+
+.p-active {
+  text-align: start;
+  color: aliceblue;
+}

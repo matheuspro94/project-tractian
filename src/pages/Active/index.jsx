@@ -1,5 +1,5 @@
-import ActiveCard from "../../components/ActiveCard";
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/Navbar';
+import ActiveCard from '../../components/ActiveCard';
 
 function Active() {
   return (

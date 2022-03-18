@@ -1,60 +1,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import Context from '../../context/Context';
+import './styles.css';
 
 function ActiveCard() {
 
-  const [actives, setActives] = useState('');
-
-  async function getActives() {
-    try {
-      const { data } = await axios.get('https://my-json-server.typicode.com/tractian/fake-api/assets')
-      setActives(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  useEffect(() => {
-    getActives()
-  }, [])
-
-  useEffect(() => {
-  }, [actives])
-  console.log(actives)
+  const { actives } = useContext(Context)
 
   if (!actives) {
     return <h4>{'Carregando ...'}</h4>
   } else {
     return (
-      <section className="container">
-        <div>
-          <div>
-            <img src={actives[0].image} alt={actives[0].name} />
-          </div>
-          <div>
-            <h3>{actives[0].name}</h3>
-            <p>{actives[0].model}</p>
-            <p>Empresa</p>
-            <div className="dropdown">
-              <a
-                className="btn btn-secondary dropdown-toggle"
-                href="#"
-                role="button"
-                id="dropdownMenuLink"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Status
-              </a>
-              <ul>
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
-          </div>
+      <div className="container container-active">
+        <div className="row">
+          {actives.map((active, index) => (
+            <Link className="col-sm-6 col-lg-4 col-xl-3 content-active" key={index} to={`/status-active/${active.id}`}>
+              <div>
+                <img className="img-active card-img-top" src={active.image} alt={active.name} />
+                <h4 className="p-active">{active.name}</h4>
+                <p className="p-active">{active.sensors[0]}</p>
+                <p className="p-active">{`MODELO: ${active.model}`}</p>
+              </div>
+            </Link>
+          ))}
         </div>
-      </section>
+      </div>
     )
   }
 }
