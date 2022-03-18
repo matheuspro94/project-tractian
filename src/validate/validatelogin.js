@@ -1,5 +1,5 @@
 function validateEmail(email) {
-  const regex = new RegExp('.+@.+[.].+', 'gm');
+  const regex = /.+@.+[.].+/gm;
   const isValid = regex.test(email);
   if (isValid) {
     return true;

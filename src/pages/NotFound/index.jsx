@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div>
       <h1>Ops, você entrou em uma url que não existe :/</h1>
-      <button type="button" onClick={ history.goBack }>VOLTAR</button>
+      <button type="button" onClick={history.goBack}>VOLTAR</button>
     </div>
   );
 }

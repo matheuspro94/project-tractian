@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from '../../components/Navbar';
 import ActiveCard from '../../components/ActiveCard';
 
@@ -7,7 +8,7 @@ function Active() {
       <Navbar />
       <ActiveCard />
     </>
-  )
+  );
 }
 
 export default Active;

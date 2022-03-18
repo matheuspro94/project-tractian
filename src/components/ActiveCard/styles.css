@@ -1,5 +1,24 @@
-.container.container-active {
-  height: 100px;
+.container-active {
+  background-color: #2b5ac6;
+  width: 80%;
+  margin: 40px auto;
+}
+
+.content-row {
+  background-color: #2b5ac6;
+}
+
+.content-card {
+  background-color: aliceblue;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.content-card:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .img-active {
@@ -8,5 +27,5 @@
 
 .p-active {
   text-align: start;
-  color: aliceblue;
+  color: black;
 }

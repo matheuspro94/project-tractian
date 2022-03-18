@@ -1,15 +1,19 @@
-.App {
-  margin: 0;
-  padding: 0;
-  background-color: #2b5ac6;
-  height: 1500px;
-  max-width: 100%;
-  position: relative;
-}
-
 * {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  background-color: #2b5ac6;
+
+}
+
+.App {
+  background-color: #2b5ac6;
+  height: 100vh;
+  max-width: 100%;
+  position: relative;
 }

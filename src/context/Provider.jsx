@@ -1,35 +1,32 @@
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import Context from './Context';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import Context from './Context';
 
 function Provider({ children }) {
-
-  const [actives, setActives] = useState('');
+  const [actives, setActives] = useState([]);
 
   async function getActives() {
     try {
-      const { data } = await axios.get('https://my-json-server.typicode.com/tractian/fake-api/assets')
-      setActives(data)
+      const { data } = await axios.get('https://my-json-server.typicode.com/tractian/fake-api/assets');
+      setActives(data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   useEffect(() => {
-    getActives()
-  }, [])
+    getActives();
+  }, []);
 
-
-  const contextValue = {
-    actives,
-  }
+  const contextValue = { actives };
+  const memoizedValue = useMemo(() => contextValue);
 
   return (
-    <Context.Provider value={ contextValue }>
+    <Context.Provider value={memoizedValue}>
       { children}
     </Context.Provider>
-  )
+  );
 }
 
 Provider.propTypes = {
