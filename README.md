@@ -24,9 +24,9 @@ Pronto, agora é possível acessar a aplicação a partir da rota http://localho
 
 ## Funcionalidades do projeto
 
-- `Funcionalidade 1`: Ver todos ativo
+- `Funcionalidade 1`: Ver todos os ativo
 - `Funcionalidade 2`: Ver detalhes de um ativo
-- `Funcionalidade 3`: Atualizar o ativo
+- `Funcionalidade 3`: Atualizar um ativo po vez
 - `Funcionalidade 4`: Gráfico baseado no dados do ativo
 
 ## Deploy da aplicação com Heroku
