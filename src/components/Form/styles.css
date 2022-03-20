@@ -1,0 +1,50 @@
+.container-form {
+  max-width: 80%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.container-form h4 {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.content-form {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+}
+
+.content-label {
+  padding-bottom: 15px;
+  font-weight: 600;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content-input-form {
+  margin-left: 15px;
+}
+
+.content-btns-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-select {
+  margin-left: 15px;
+}
+.content-span {
+  text-align: center;
+  padding: 20px 0;
+  padding-bottom: 0;
+  color: red;
+}

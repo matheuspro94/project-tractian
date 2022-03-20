@@ -8,7 +8,11 @@
   background-color: #4b6dbf;
 }
 
-.content-right {
+.content-right-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
   background-color: #ffffff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -17,10 +21,10 @@
   padding-bottom: 15px;
 }
 
-.content-right h1 {
+.content-right-login h1 {
   font-weight: 700;
 }
-.content-right h1, p {
+.content-right-login h1, p {
   text-align: center;
 }
 

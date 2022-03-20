@@ -1,25 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Moment from 'moment';
+import { ReactComponent as Pencil } from '../../assets/img/pencil-square.svg';
 import Context from '../../context/Context';
 import './styles.css';
 
 function StatusCard() {
   const { id } = useParams();
-  const [activeById, setActiveById] = useState();
-  const { actives } = useContext(Context);
+  const { actives, getActiveById, activeById } = useContext(Context);
 
-  async function getActiveById() {
-    try {
-      const { data } = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/assets/${id}`);
-      setActiveById(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
   useEffect(() => {
-    getActiveById();
+    getActiveById(id);
   }, []);
 
   function transformInHours(time) {
@@ -36,6 +27,14 @@ function StatusCard() {
       <div className="content-status-img">
         <h3>{activeById.name}</h3>
         <img src={activeById.image} alt={activeById.name} />
+        <div className="content-btn-status">
+          <Link to={`/form-active/${id}`}>
+            <button className="btn btn-primary" type="button">
+              <p className="content-p-btn">Atualizar ativo</p>
+              <Pencil />
+            </button>
+          </Link>
+        </div>
       </div>
       <div>
         <h4>Ativo</h4>

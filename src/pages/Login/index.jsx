@@ -36,7 +36,7 @@ function Login() {
         <div className="content-left col-6">
           <img className="img-fluid" src="https://app.tractian.com/static/media/tractian-login.f480cb7e.svg" alt="traction-login" />
         </div>
-        <form className="content-right col-6 align-items-stretch">
+        <form className="content-right-login col-6 align-items-stretch">
           <h1>LOGIN</h1>
           <div className="input-group has-validation content-input">
             <input

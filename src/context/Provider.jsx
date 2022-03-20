@@ -5,6 +5,8 @@ import Context from './Context';
 
 function Provider({ children }) {
   const [actives, setActives] = useState([]);
+  const [activeById, setActiveById] = useState();
+  const [update, setUpdate] = useState();
 
   async function getActives() {
     try {
@@ -15,11 +17,36 @@ function Provider({ children }) {
     }
   }
 
+  async function getActiveById(id) {
+    try {
+      const { data } = await axios.get(`https://my-json-server.typicode.com/tractian/fake-api/assets/${id}`);
+      setActiveById(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function updateActive(id, params) {
+    try {
+      const { data } = await axios.put(`https://my-json-server.typicode.com/tractian/fake-api/assets/${id}`, params);
+      setUpdate(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getActives();
   }, []);
 
-  const contextValue = { actives };
+  const contextValue = {
+    actives,
+    activeById,
+    getActiveById,
+    updateActive,
+    update,
+  };
+
   const memoizedValue = useMemo(() => contextValue);
 
   return (
