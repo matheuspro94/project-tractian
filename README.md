@@ -6,19 +6,19 @@ O projeto é baseado na API da empresa Tractian, aonde tem objetivo principal o 
 
 No terminal, clone o projeto:
 
-> git clone https://github.com/mroenca40/project-tractian.git
+$ git clone https://github.com/mroenca40/project-tractian.git
 
 Entre na pasta do projeto:
 
-> cd project-tratian
+$ cd project-tratian
 
 Instale as dependencias:
 
-> npm install
+$ npm install
 
 Execute a aplicação:
 
-> npm start
+$ npm start
 
 Pronto, agora é possível acessar a aplicação a partir da rota http://localhost:3000/login
 
